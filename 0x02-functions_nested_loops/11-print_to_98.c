@@ -39,7 +39,7 @@ void print_to_98(int n)
 	printf("\n");
 	break;
 	}
-	els
+	else
 	{
 	printf("%d, ", n);
 	}
