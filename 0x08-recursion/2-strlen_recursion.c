@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strlen_recusion - Retums the length of a string.
+ * _strlen_recusion - Returns the length of a string.
  * @s: The string to be measured.
  *
  * Return: The length of the string.
