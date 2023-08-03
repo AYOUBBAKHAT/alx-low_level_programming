@@ -30,4 +30,3 @@ int actual_prime(int n, int i)
 		return (0);
 	return (actual_prime(n, i - 1));
 }
-
