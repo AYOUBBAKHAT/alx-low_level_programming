@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	bytes = stoi(argv[i]);
+	bytes = stoi(argv[1]);
 
 	if (bytes < 0)
 	{
