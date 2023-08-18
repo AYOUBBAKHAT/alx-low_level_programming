@@ -49,7 +49,6 @@ int op_mul(int a, int b)
 int op_div(int a, int b)
 {
 	return (a / b);
-
 }
 /**
  * op_mod - Returns the remainder of the division of two numbers.
