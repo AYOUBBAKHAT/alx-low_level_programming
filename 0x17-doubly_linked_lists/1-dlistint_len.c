@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * distint_len - returns length of dlist
+ * dlistint_len - returns length of dlist
  * @h: address of head node
  *
  * Return: size of list
