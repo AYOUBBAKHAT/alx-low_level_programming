@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - sum the values of a dlist
+ * sum_dlistint - sums the values of a dlist
  * @head: poiter to current head node
  *
  * Return: int sum of values
