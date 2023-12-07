@@ -2,7 +2,7 @@
 
 /**
  * sum_dlistint - sums the values of a dlist
- * @head: poiter to current head node
+ * @head: pointer to current head node
  *
  * Return: int sum of values
  */
