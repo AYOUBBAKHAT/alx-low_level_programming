@@ -1,50 +1,50 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index of a,
- * linked list.
- * @head: pointer to pointer to the h of linked list.
- * @index: ndex of the node that should be deleted. Index starts at 0.
- *
- * Return: if it succeeded, -1 if it failed
- */
-
+ * delete_dnodeint_at_index - deletes the node at index of a dlistint_t list.
+ * @head: pointer to the list.
+ * @index: position of the node to delete.
+ * Return: 1 if it succeeded, -1 if it failed.
+ **/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *head1;
-	dlistint_t *head2;
-	unsigned int count;
+	dlistint_t *aux_node = *head;
+	dlistint_t *node_to_delete = *head;
+	unsigned int idx;
+	unsigned int cont = 0;
 
-	head1 = *head;
+	/* border case for empty list */
+	if (!(*head))
+		return (-1);
 
-	if (head1 != NULL)
-		while (head1->prev != NULL)
-			head1 = head1->prev;
-	count = 0;
-
-	while (head1 != NULL)
+	/* border case for delete at the beginning */
+	if (index == 0)
 	{
-		if (count == index)
-		{
-			if (count == 0)
-			{
-				*head = head1->next;
-				if (*head != NULL)
-					(*head)->prev = NULL;
-			}
-			else
-			{
-				head2->next = head1->next;
-
-				if (head1->next != NULL)
-					head1->next->prev = head2;
-			}
-			free(head1);
-			return (1);
-		}
-		head2 = head1;
-		head1 = head1->next;
-		count++;
+		*head = node_to_delete->next;
+		free(node_to_delete);
+		if (*head)
+			(*head)->prev = NULL;
+		return (1);
 	}
+
+	/* search of position to delete */
+	idx = index - 1;
+	while (aux_node && cont != idx)
+	{
+		cont++;
+		aux_node = aux_node->next;
+	}
+
+	/* general case */
+	if (cont == idx && aux_node)
+	{
+		node_to_delete = aux_node->next;
+		if (node_to_delete->next)
+		node_to_delete->next->prev = aux_node;
+		aux_node->next = node_to_delete->next;
+		free(node_to_delete);
+		return (1);
+	}
+
 	return (-1);
 }
